@@ -18,7 +18,19 @@ def create_character(name, character_class):
     """
     # TODO: Implement this function
     # Remember to use calculate_stats() function for stat calculation
-    pass
+    level = 1
+    strength, magic, health = calculate_stats(character_class, level)
+    gold = 100
+    return {
+        "name": name,
+        "class": character_class,
+        "level": level,
+        "strength": strength,
+        "magic": magic,
+        "health": health,
+        "gold": gold
+    }
+
 
 def calculate_stats(character_class, level):
     """
@@ -33,7 +45,28 @@ def calculate_stats(character_class, level):
     """
     # TODO: Implement this function
     # Return a tuple: (strength, magic, health)
-    pass
+    if character_class == "Warrior":
+        strength = 10 + level * 3
+        magic = 3 + level * 1
+        health = 100 + level * 5
+    elif character_class == "Mage":
+        strength = 4 + level * 1
+        magic = 12 + level * 4
+        health = 80 + level * 3
+    elif character_class == "Rogue":
+        strength = 7 + level * 2
+        magic = 6 + level * 2
+        health = 90 + level * 4
+    elif character_class == "Cleric":
+        strength = 6 + level * 1
+        magic = 10 + level * 3
+        health = 110 + level * 5
+    else:
+        # Return default stats even for invalid classes
+        strength = 5 + level * 1
+        magic = 5 + level * 1
+        health = 100 + level * 3
+    return (strength, magic, health)  # always return a tuple
 
 def save_character(character, filename):
     """
@@ -51,7 +84,18 @@ def save_character(character, filename):
     """
     # TODO: Implement this function
     # Remember to handle file errors gracefully
-    pass
+    try:
+        with open(filename, "w") as file:
+            file.write(f"Character Name: {character['name']}\n")
+            file.write(f"Class: {character['class']}\n")
+            file.write(f"Level: {character['level']}\n")
+            file.write(f"Strength: {character['strength']}\n")
+            file.write(f"Magic: {character['magic']}\n")
+            file.write(f"Health: {character['health']}\n")
+            file.write(f"Gold: {character['gold']}\n")
+        return True
+    except:
+        return False
 
 def load_character(filename):
     """

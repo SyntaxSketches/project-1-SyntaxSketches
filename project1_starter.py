@@ -63,7 +63,7 @@ def calculate_stats(character_class, level):
 def save_character(character, filename):
     """
     Save character info to a text file in required format.
-    Includes error handling for file writing issues.
+    FIXED: Now explicitly returns a boolean (True/False) as required by tests.
     """
     try: 
         with open(filename, "w") as f:
@@ -74,8 +74,15 @@ def save_character(character, filename):
             f.write(f"Magic: {character['magic']}\n")
             f.write(f"Health: {character['health']}\n")
             f.write(f"Gold: {character['gold']}\n")
+        
+        #FIX 1: Return True on successful save
+        return True 
+        
     except IOError as e:
-        print(f"Error saving character to {filename}: {e}")
+        # Debugging print statement left in for local testing
+        print(f"\nFATAL FILE ERROR: Could not save character to {filename}.")
+        print(f"OS REASON: {e}")
+        return False
 
 def load_character(filename):
     """

@@ -31,7 +31,7 @@ def create_character(name, character_class):
         "strength": strength,
         "magic": magic,
         "health": health,
-        "gold": 100  # starting gold
+        "gold": 100,   # starting gold
         #BONUS POINTS 
         "equipment": STARTING_EQUIPMENT.get(standardized_class, "None")
     }

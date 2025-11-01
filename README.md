@@ -1,99 +1,51 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/JTXl4WMa)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=21239110&assignment_repo_type=AssignmentRepo)
-# COMP 163 - Project 1: Character Creator & Chronicles
-# 🎯 Project Overview
+Game Concept: The World of Chrysalis
 
-Build a text-based RPG character creation and story progression system that demonstrates mastery of functions and file I/O operations.
+The world of Chrysalis is a world full of shimmering magic and ancient legends, where the rise of powerful, predominantly female heroes is chronicled for posterity. You get to choose from four core archetypes: the tough Warrior (Ariah), the elusive Rogue (Lyra), the supportive Cleric (Elara), and the powerful Mage (Memphis). This little system tracks their growth and gear reliably as they begin their journey!
 
-# Required Functions 
-Complete these functions in project1_starter.py:
+Design Choices: Stat Formulas
 
-create_character(name, character_class) - Create new character
+I wanted the stats to be easy to understand but still make each class feel completely unique. My formula for calculating stats is straightforward and applies to every stat:
 
-calculate_stats(character_class, level) - Calculate character stats
+                                       BASE STAT + (LEVEL X GROWTH RATE)
 
-save_character(character, filename) - Save character to file
+Warrior (Ariah): They're built as the main tank. They have high starting Health (120) and massive HP Growth (+5), making them super durable. Their high Strength (15) ensures they hit hard right away.
 
-load_character(filename) - Load character from file
+Mage (Memphis): They're the glass cannons. They have the highest starting Magic (18) and the best Magic Growth (+3) for rapid spell power scaling. Their low starting Strength is the necessary tradeoff!
 
-display_character(character) - Display character info
+Rogue (Lyra): They're agile and balanced. Their base stats are pretty even, and their low starting Health means they have to rely on their quick Strength (10) and speed rather than endurance.
 
-level_up(character) - Increase character level
+Cleric (Elara): They're durable support. They have strong Magic (15) for healing and casting, plus great Health (110), making them tough, versatile healers.
 
-# 🎭 Character Classes
-Implement these character classes with unique stat distributions:
+BONUS Creative Feature: Starting Equipment based on Class
 
+I added Starting Equipment based on Class! 
+Warrior: Gets heavy defense items like the Lionheart Chestplate and Guardian's Aegis to protect that huge Health pool, plus the powerful Aetherium Greatsword for damage.
 
-Warrior: High strength, low magic, high health
+Mage: Gets powerful, mystic items like the Prism Staff of Mana and the Ancient Rune Scroll to channel their high Magic stat.
 
-Mage: Low strength, high magic, medium health
+Rogue: Gets gear for stealth and skill, including the Twin Shadow Blades and the essential Master's Lockpick Set.
 
-Rogue: Medium strength, medium magic, low health
+Cleric: Gets mystical support gear like the Scepter of Divine Power and Sacred Mantle, aligning their divine gear with their high Magic and Health.
 
-Cleric: Medium strength, high magic, high health
+The code handles this by pulling the corresponding equipment string from a dictionary and saving it directly into the character's file when created!
 
-# 📁 Required File Format
-Your save_character() function must create files in this exact format:
+                                                      AI Code Stuff
+I used AI heavily to ensure the code was bug-free and compliant. AI helped me implement the sophisticated error handling in the file I/O functions and fixed several tricky logical errors,
 
-Character Name: [name]
+                                                    How to run my code
+To run and verify my project, follow the steps below:
 
-Class: [class]
+Navigate to the Project Directory
 
-Level: [level]
+Open the terminal and move into the folder containing project1_starter.py.
+cd project-1-SyntaxSketches
 
-Strength: [strength]
+Run the Program
 
-Magic: [magic]
+Execute the main Python file to generate and display all test characters.
+This will also create text files for each character in the same directory. python project1_starter.py
 
-Health: [health]
+Run the Automated Tests
 
-Gold: [gold]
-
-
-# Run specific test file
-python -m pytest tests/test_character_creation.py -v
-
-# Test your main program
-python project1_starter.py
-
-GitHub Testing:
-
-After pushing your code, check the Actions tab to see automated test results:
-
-✅ Green checkmarks = tests passed
-❌ Red X's = tests failed (click to see details)
-
-# ⚠️ Important Notes
-Protected Files
-
-DO NOT MODIFY files in the tests/ directory
-
-DO NOT MODIFY files in the .github/ directory
-
-Modifying protected files will result in automatic academic integrity violation
-
-# AI Usage Policy
-
-✅ Allowed: AI assistance for implementation, debugging, learning
-
-📝 Required: Document AI usage in code comments
-
-🎯 Must be able to explain: Every line of code during interview
-
-# 📝 Submission Checklist
-
- All required functions implemented
- 
- Code passes all automated tests
- 
- README updated with your documentation
- 
- Interview scheduled and completed
- 
- AI usage documented in code comments
-
-# 🏆 Grading
-
-Implementation (70%): Function correctness, file operations, error handling
-
-Interview (30%): Code explanation and live coding challenge
+Use the  command (pytest) to verify that all functions and file operations pass the automated test suite:
+If everything is working correctly, you should see all tests pass with green checkmarks in the terminal output

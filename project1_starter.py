@@ -4,6 +4,13 @@ Name: Kabijah Hill
 Date: 10/28
 
 """
+STARTING_EQUIPMENT = {
+    "Warrior": "Longsword, Steel Shield, Iron Armor",
+    "Mage": "Oak Staff, Spell Tome, Robe",
+    "Rogue": "Dagger, Lock Picks, Leather Vest",
+    "Cleric": "Mace, Holy Symbol, Chainmail"
+}
+
 
 def create_character(name, character_class):
     """Create a new character dictionary with stats."""
@@ -25,6 +32,8 @@ def create_character(name, character_class):
         "magic": magic,
         "health": health,
         "gold": 100  # starting gold
+        #BONUS POINTS 
+        "equipment": STARTING_EQUIPMENT.get(standardized_class, "None"
     }
 
     return character
@@ -74,8 +83,10 @@ def save_character(character, filename):
             f.write(f"Magic: {character['magic']}\n")
             f.write(f"Health: {character['health']}\n")
             f.write(f"Gold: {character['gold']}\n")
+            #BONUS POINTS 
+            f.write(f"Equipment: {character['equipment']}\n")
         
-        #FIX 1: Return True on successful save
+        #fiX 1: Return True on successful save
         return True 
         
     except IOError as e:
@@ -98,6 +109,7 @@ def load_character(filename):
         "Magic": "magic",
         "Health": "health",
         "Gold": "gold",
+        "Equipment": "equipment",  #bonus points!!!
     }
 
     try: 
@@ -151,6 +163,7 @@ def display_character(character):
     print(f"Magic: {character['magic']}")
     print(f"Health: {character['health']}")
     print(f"Gold: {character['gold']}")
+    print(f"Equipment: {character['equipment']}") #bonus points
 
 def level_up(character):
     """

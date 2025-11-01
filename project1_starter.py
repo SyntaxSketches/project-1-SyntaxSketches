@@ -33,7 +33,7 @@ def create_character(name, character_class):
         "health": health,
         "gold": 100  # starting gold
         #BONUS POINTS 
-        "equipment": STARTING_EQUIPMENT.get(standardized_class, "None"
+        "equipment": STARTING_EQUIPMENT.get(standardized_class, "None")
     }
 
     return character

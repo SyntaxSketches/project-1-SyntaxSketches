@@ -132,7 +132,7 @@ def load_character(filename):
         except ValueError:
             # Skip lines that don't split correctly (malformed)
             continue 
-
+        #AI wrote this entire part, starting here
         if key_str in KEY_MAP:
             value = value_str
             # Check if the value should be an integer
@@ -143,13 +143,12 @@ def load_character(filename):
                     # Abort load if a required integer is corrupted
                     print(f"Error: Invalid number format for {key_str} in file: {value_str}")
                     return None 
-                    
+                   #     
             character[KEY_MAP[key_str]] = value
-
+            #AI code ennds here    
     # Check if all required keys were loaded successfully
     required_keys = set(KEY_MAP.values())
     if set(character.keys()) != required_keys:
-        # Data is incomplete
         return None 
         
     return character

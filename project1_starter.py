@@ -5,10 +5,10 @@ Date: 10/28
 
 """
 STARTING_EQUIPMENT = {
-    "Warrior": "Longsword, Steel Shield, Iron Armor",
-    "Mage": "Oak Staff, Spell Tome, Robe",
-    "Rogue": "Dagger, Lock Picks, Leather Vest",
-    "Cleric": "Mace, Holy Symbol, Chainmail"
+    "Warrior": "Aetherium Longsword, Lionheart Chestplate, Guardian Angel",
+    "Mage": "Staff of Mana, Ancient Rune Scroll, Velvet Cloak",
+    "Rogue": "Twin Shadow Blades, Sleek Recon Hood, Master's Lockpick Set",
+    "Cleric": "Scepter of Divine Power, Blessed Amulet, Sacred Mantle."
 }
 
 
@@ -192,34 +192,52 @@ if __name__ == "__main__":
     print("Test your functions here!\n")
 
     # The program should now execute past here without crashing.
-    hero = create_character("Ariah", "Warrior")
+    warrior = create_character("Ariah", "Warrior")
+    rogue = create_character("Lyra", "Rogue")
+    cleric = create_character("Elara", "Cleric")
     mage = create_character("Memphis", "Rogue")
 
-    if hero:
+    if warrior:
         print("\nMain Character:")
-        display_character(hero)
-        save_character(hero, "ariah.txt")
+        display_character(warrior)
+        save_character(warrior, "ariah.txt")
         
         # Demonstrate level up and saving
-        level_up(hero)
+        level_up(warrior)
         print("\nMain Character (Level 2):")
-        display_character(hero)
-        save_character(hero, "ariah_L2.txt")
+        display_character(warrior)
+        save_character(warrior, "ariah_L2.txt")
         
         # Demonstrate loading
-        loaded_hero = load_character("ariah.txt")
-        if loaded_hero:
+        loaded_warrior = load_character("ariah.txt")
+        if loaded_warrior:
              print("\nLoaded Ariah (Level 1):")
-             display_character(loaded_hero)
+             display_character(loaded_warrior)
         else:
              print("\nError loading Ariah.")
 
     else:
-        print("Error: hero creation failed.\n")
+        print("Error: warrior creation failed.\n")
+    # 2. Test Rogue (Create, Display, Save)
+    if rogue:
+        print("\n--- 2. Stealth Character (Rogue: Lyra) ---")
+        display_character(rogue)
+        save_character(rogue, "lyra.txt")
+    else:
+        print("Error: Rogue creation failed.\n")
 
+    # 3. Test Cleric 
+    if cleric:
+        print("\n--- 3. Support Character (Cleric: Elara) ---")
+        display_character(cleric)
+        save_character(cleric, "elara.txt")
+    else:
+        print("Error: Cleric creation failed.\n")
+
+    # 4. Test Mage
     if mage:
-        print("\nSide Character:")
+        print("\n--- 4. Spellcaster Character (Mage: Memphis) ---")
         display_character(mage)
         save_character(mage, "memphis.txt")
     else:
-        print("Error: mage creation failed.\n")
+        print("Error: Mage creation failed.\n")

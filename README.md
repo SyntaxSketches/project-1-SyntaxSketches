@@ -1,6 +1,6 @@
 Game Concept: The World of Chrysalis
 
-The world of Chrysalis is a world full of shimmering magic and ancient legends, where the rise of powerful, predominantly female heroes is chronicled for posterity. You get to choose from four core archetypes: the tough Warrior (Ariah), the elusive Rogue (Lyra), the supportive Cleric (Elara), and the powerful Mage (Memphis). This little system tracks their growth and gear reliably as they begin their journey!
+Chrysalis is a magical world filled with shimmering energy and ancient legends, where the rise of powerful heroes is recorded for generations to come.You get to choose from four core archetypes: the tough Warrior (Ariah), the elusive Rogue (Lyra), the supportive Cleric (Elara), and the powerful Mage (Memphis). This little system tracks their growth and gear reliably as they begin their journey!
 
 Design Choices: Stat Formulas
 
